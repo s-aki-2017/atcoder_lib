@@ -10,7 +10,7 @@ void Initpar(int n){
 
 int root(int x){
   if(x == par.at(x)) return x;
-  else par.at(x) = root(par.at(x));
+  else return par.at(x) = root(par.at(x));
 }
 
 void unite(int x, int y){

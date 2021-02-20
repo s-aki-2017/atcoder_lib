@@ -24,7 +24,7 @@ long rec(string &s, int k=0, bool tight=true){
   }
 
   return dp[k][tight] = res;
-}
+}// 結果がおかしいときはだいたい0を含んでいるかどうか
 
 void dpInit(long value, int a = 1, int b = 1, int c = 1){
   for(int i=0; i<a; i++){
