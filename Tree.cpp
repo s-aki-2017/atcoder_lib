@@ -1,20 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
-using vb = vector<bool>;
-using vc = vector<char>;
-using vl = vector<ll>;
-using vs = vector<string>;
-using vd = vector<double>;
-using vvb = vector<vector<bool>>;
-using vvc = vector<vector<char>>;
-using vvl = vector<vector<ll>>;
-using pll = pair<ll, ll>;
-using pdd = pair<double,double>;
-#define fix20 cout << fixed << setprecision(20)
-#define yes cout << "Yes" << endl
-#define no cout << "No" << endl
-#define rep(i,n) for(ll i=0; i<(ll)(n);i++)
+
 
 class Tree{
     public:
