@@ -4,7 +4,7 @@ using namespace std;
 
 
 // 4と9を含まない数字の組合せ
-long dp[100][2];
+long dp[100020][2];
 // 各桁の総和を知りたい場合は引数にsum,判定にsum==D
 long rec(string &s, int k=0, bool tight=true){
   if(k == s.size()){
@@ -24,7 +24,7 @@ long rec(string &s, int k=0, bool tight=true){
   }
 
   return dp[k][tight] = res;
-}// 結果がおかしいときはだいたい0を含んでいるかどうか
+}// 結果がおかしいときはだいたい0を含んでいるかどうか、1以上の整数か0以上の整数か
 
 void dpInit(long value, int a = 1, int b = 1, int c = 1){
   for(int i=0; i<a; i++){
