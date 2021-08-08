@@ -1,12 +1,12 @@
 #include <vector>
 using namespace std;
+using ll = int;
 
-
-int Syakutori(vector<long> &d, int n, int k){
-  int len = 0;
-  long tmp = 1; //default value
-  //long ans = 0;
-  for(int s=0,t=0; t<n; t++){ //s<= and <=t
+ll Syakutori(vector<ll> &d, ll n, ll k){
+  ll len = 0;
+  ll tmp = 1; //default value
+  //ll ans = 0;
+  for(ll s=0,t=0; t<n; t++){ //s<= and <=t
     //tmp *= d.at(t); //front
     //tmp += d.at(t); //front
     while(tmp < k && s <= t){

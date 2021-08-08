@@ -1,18 +1,18 @@
 #include <vector>
 #include <queue>
 using namespace std;
-
+using ll = int;
 
 struct Node{
-  int now;
-  int sub;
-  long cost;
+  ll now;
+  ll sub;
+  ll cost;
 };
 
 struct Edge{
-  int from;
-  int to;
-  long cost;
+  ll from;
+  ll to;
+  ll cost;
 };
 
 bool operator<(const Node &a, const Node &b){
@@ -28,9 +28,9 @@ bool operator>=(const Node &a, const Node &b){return !(a < b);}
 
 //vector<vector<Edge>> Graph(n);
 
-vector<vector<long>> Dijkstra(vector<vector<Edge>> &Graph, int start, int start_sub, int sub_max){ //最小コスト
+vector<vector<ll>> Dijkstra(vector<vector<Edge>> &Graph, ll start, ll start_sub, ll sub_max){ //最小コスト
   priority_queue<Node, vector<Node>, greater<Node>> que;
-  vector<vector<long>> dist(Graph.size(), vector<long>(sub_max, 1e16));
+  vector<vector<ll>> dist(Graph.size(), vector<ll>(sub_max, 1e16));
 
   dist.at(start).at(start_sub) = 0;
   que.push(Node{start, start_sub, 0});
@@ -38,13 +38,13 @@ vector<vector<long>> Dijkstra(vector<vector<Edge>> &Graph, int start, int start_
   while(que.size()){
     Node node = que.top();
     que.pop();
-    int v = node.now;
-    int sv = node.sub;
+    ll v = node.now;
+    ll sv = node.sub;
     if(node.cost > dist.at(v).at(sv)) continue;
     for(Edge edge : Graph.at(v)){
-      int nv = edge.to;
-      long cost = edge.cost;
-      int nsv; //edit------------------------------------------
+      ll nv = edge.to;
+      ll cost = edge.cost;
+      ll nsv; //edit------------------------------------------
       if(dist.at(nv).at(nsv) > dist.at(v).at(sv) + cost){
         dist.at(nv).at(nsv) = dist.at(v).at(sv) + cost;
         que.push(Node{nv, nsv, dist.at(nv).at(nsv)});

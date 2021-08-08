@@ -2,11 +2,12 @@
 #include<vector>
 #include<bitset>
 using namespace std;
+using ll = int;
 
-void COUT(vector<vector<long>> &mat){
-    long s = mat.size();
-    for(int i=0;i<s;i++){
-        for(int j=0;j<s;j++){
+void COUT(vector<vector<ll>> &mat){
+    ll s = mat.size();
+    for(ll i=0;i<s;i++){
+        for(ll j=0;j<s;j++){
             cout << mat.at(i).at(j) << " ";
         }
         cout << endl;
@@ -14,19 +15,19 @@ void COUT(vector<vector<long>> &mat){
     cout << endl;
 }
 
-void Initmat(vector<vector<long>> &mat){
-  long n = mat.size();
-  for(int i=0;i<n;i++){
+void Initmat(vector<vector<ll>> &mat){
+  ll n = mat.size();
+  for(ll i=0;i<n;i++){
       mat.at(i).at(i) = 1;
   }
 }
 
-void multmat(vector<vector<long>> &ret, vector<vector<long>> mat1, vector<vector<long>> mat2){
-    long m = mat1.size();
-    for(int i=0;i<m;i++){
-        for(int j=0;j<m;j++){
-            long tmp = 0;
-            for(int k=0;k<m;k++){
+void multmat(vector<vector<ll>> &ret, vector<vector<ll>> mat1, vector<vector<ll>> mat2){
+    ll m = mat1.size();
+    for(ll i=0;i<m;i++){
+        for(ll j=0;j<m;j++){
+            ll tmp = 0;
+            for(ll k=0;k<m;k++){
                 tmp += mat1.at(i).at(k) * mat2.at(k).at(j);
                 //tmp %= MOD;
             }
@@ -35,12 +36,12 @@ void multmat(vector<vector<long>> &ret, vector<vector<long>> mat1, vector<vector
     }
 }
 
-vector<vector<long>> matpow(vector<vector<long>> mat, long exp){
-    long n = mat.size();
-    vector<vector<long>> ret(n,vector<long>(n,0));
-    for(int i=0;i<n;i++) ret.at(i).at(i) = 1;
+vector<vector<ll>> matpow(vector<vector<ll>> mat, ll exp){
+    ll n = mat.size();
+    vector<vector<ll>> ret(n,vector<ll>(n,0));
+    for(ll i=0;i<n;i++) ret.at(i).at(i) = 1;
     bitset<60> bt(exp);
-    for(int i=0;i<60;i++){
+    for(ll i=0;i<60;i++){
         if(bt.test(i)){
             multmat(ret,ret,mat);
             //COUT(ret);
