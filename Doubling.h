@@ -1,20 +1,21 @@
 #include <vector>
 using namespace std;
+using ll = int;
 
-void Init_Dubling(vector<vector<long>> &next, long d){
-  int n = next.size();
+void Init_Dubling(vector<vector<ll>> &next, ll d){
+  ll n = next.size();
   
-  for(long i=1;(1<<i) <= d;i++){
-    for(int j=0;j<n;j++){
-      long nj = next.at(j).at(i-1);
+  for(ll i=1;(1<<i) <= d;i++){
+    for(ll j=0;j<n;j++){
+      ll nj = next.at(j).at(i-1);
       next.at(j).at(i) = next.at(nj).at(i-1);
     }
   }
 }
 
-long res_Dubing(vector<vector<long>> &next, long d, long v){
-  long nv = v;
-  for(long i=0;(1<<i) <= d;i++){
+ll res_Dubing(vector<vector<ll>> &next, ll d, ll v){
+  ll nv = v;
+  for(ll i=0;(1<<i) <= d;i++){
     if( (1<<i) & d ){
       nv = next.at(nv).at(i);
     }

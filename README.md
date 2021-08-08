@@ -1,2 +1,2 @@
 # atcoder_lib
-lib for atcoder
+library for atcoder

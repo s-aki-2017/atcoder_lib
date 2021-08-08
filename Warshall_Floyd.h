@@ -1,7 +1,8 @@
 #include <vector>
 using namespace std;
+using ll = int;
 
-void Warshall_Floyd(vector<vector<long>> &dist){
+void Warshall_Floyd(vector<vector<ll>> &dist){
   int n = dist.size();
   for(int k=0;k<n;k++){
     for(int i=0;i<n;i++){

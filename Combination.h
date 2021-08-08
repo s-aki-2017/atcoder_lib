@@ -25,7 +25,6 @@ long long COM(int n, int k){
 
 int main() {
     // 前処理
-    COMinit();
-    //cout << COM(100000, 50000) << endl;
+    COMinit(); // COM(100000, 50000)
 
 }
